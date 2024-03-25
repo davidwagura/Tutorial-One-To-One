@@ -13,8 +13,9 @@ class Father extends Model
 
     ];
 
-    public function child()
+    public function father()
     {
-        return $this->belongsTo(Child::class);
+        return $this->hasone(Father::class);
     }
+
 }

@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('children', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('father_id');
+            $table->foreinId('father_id');
             $table->string('child_name');
             $table->timestamps();
+
+            $table->foreign('father_id')->references('id')->on('fathers')->onDelete('cascade');
+
         });
     }
 

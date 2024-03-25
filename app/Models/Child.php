@@ -14,8 +14,9 @@ class Child extends Model
         'father_id',
         'child_name',
     ];
-    public function child()
+    public function father()
     {
-        return $this->belongsTo(Child::class);
+        return $this->belongsTo(Father::class);
     }
+
 }
